@@ -9,6 +9,7 @@ public class Main {
         System.out.println("Ano de Lançamento: " + anoDeLancamento);
         boolean incluidoNoPlano = true;
         double notaDoFilme = 8.1;
+        System.out.printf("%s %.1f \n", incluidoNoPlano, notaDoFilme);
         
         double media =  (9.8 + 6.3 + 8.0)/3;
 
@@ -20,6 +21,9 @@ public class Main {
             dos anos 80
             """;
         System.out.println(sinopse);
+
+        int classificacao = (int)(media/2);
+        System.out.println(classificacao);
 
     }
 
