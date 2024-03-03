@@ -36,19 +36,20 @@ public class Desafio {
                 System.out.printf("Saldo em conta: R$ %.2f\n", saldoConta);
             } else if (entrada == 2){
                 System.out.print("Insira o valor que esta recebendo");
-                int novoValor = scanner.nextInt();
+                double novoValor = scanner.nextDouble();
                 saldoConta += novoValor;
                 System.out.printf("Novo saldo em conta: R$ %.2f\n", saldoConta);
             } else if (entrada == 3){
                 System.out.print("Digite o valor que deseja trasferir: ");
-                int valorTr = scanner.nextInt();
+                double valorTr = scanner.nextDouble();
                 if (valorTr > saldoConta){
                     System.out.println("Saldo insuficiente\n");
                     System.out.printf("Saldo em conta: R$ %.2f\n", saldoConta);
                 } else {
                     saldoConta -= valorTr;
+                    System.out.printf("Transferência Realizada. Novo saldo em conta: R$ %.2f\n", saldoConta);
                 }
-                System.out.printf("Transferência Realizada. Novo saldo em conta: R$ %.2f\n", saldoConta);
+                
             } else if (entrada == 4){
                 System.out.println("Saindo do Sistema\n");
             } else {
