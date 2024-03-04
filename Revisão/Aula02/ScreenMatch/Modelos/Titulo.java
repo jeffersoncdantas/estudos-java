@@ -1,13 +1,12 @@
-package Revisão.Aula02.ScreenMatch;
+package Revisão.Aula02.ScreenMatch.Modelos;
 
-public class Filme {
-
+public class Titulo {
     private String nome;
     private int anoDeLancamento;
-    private int duracaoEmMinutos;
     private boolean incluidoNoPlano;
     private double somaDasAvaliacoes;
     private int totalDeAvaliacoes;
+    private int duracaoEmMinutos;
 
     public void exibeFichaTecnica() {
         System.out.println("Nome do filme: " +nome);
@@ -57,5 +56,4 @@ public class Filme {
     public boolean getIncluidoNoPlano(){
         return incluidoNoPlano;
     }
-
 }
