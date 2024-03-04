@@ -1,6 +1,6 @@
 package Revisão.Aula02.ScreenMatch.Modelos;
 
-public class Titulo {
+public class Titulo implements Comparable<Titulo>{
     private String nome;
     private int anoDeLancamento;
     private boolean incluidoNoPlano;
@@ -14,6 +14,15 @@ public class Titulo {
         System.out.println("Duração em minutos: " +duracaoEmMinutos);
         System.out.println("Incluído no plano: " +incluidoNoPlano);
     }
+
+    
+
+    public Titulo(String nome, int anoDeLancamento) {
+        this.nome = nome;
+        this.anoDeLancamento = anoDeLancamento;
+    }
+
+
 
     public void avalia(double nota) {
         somaDasAvaliacoes += nota;
@@ -55,5 +64,10 @@ public class Titulo {
 
     public boolean getIncluidoNoPlano(){
         return incluidoNoPlano;
+    }
+
+    @Override
+    public int compareTo(Titulo outroTitulo){
+        return this.getNome().compareTo(outroTitulo.getNome());
     }
 }
