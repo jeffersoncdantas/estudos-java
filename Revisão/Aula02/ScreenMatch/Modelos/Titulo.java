@@ -1,7 +1,13 @@
 package Revisão.Aula02.ScreenMatch.Modelos;
 
+import com.google.gson.annotations.SerializedName;
+import Revisão.Aula02.ScreenMatch.Excecao.ErroDeConversaoDeAnoException;
+
 public class Titulo implements Comparable<Titulo>{
+
+    @SerializedName("Title")
     private String nome;
+    @SerializedName("Year")
     private int anoDeLancamento;
     private boolean incluidoNoPlano;
     private double somaDasAvaliacoes;
@@ -15,7 +21,14 @@ public class Titulo implements Comparable<Titulo>{
         System.out.println("Incluído no plano: " +incluidoNoPlano);
     }
 
-    
+    public Titulo(TituloOmdb meTituloOmdb){
+        this.nome = meTituloOmdb.title();
+        if (meTituloOmdb.year().length() > 4){
+            throw new ErroDeConversaoDeAnoException("Não consegui converter o ano");
+        }
+        this.anoDeLancamento = Integer.valueOf(meTituloOmdb.year());
+        this.duracaoEmMinutos = Integer.valueOf(meTituloOmdb.runtime().substring(0,2));
+    }
 
     public Titulo(String nome, int anoDeLancamento) {
         this.nome = nome;
@@ -70,4 +83,12 @@ public class Titulo implements Comparable<Titulo>{
     public int compareTo(Titulo outroTitulo){
         return this.getNome().compareTo(outroTitulo.getNome());
     }
+
+    @Override
+    public String toString() {
+        return "Titulo [nome=" + nome + ", anoDeLancamento=" + anoDeLancamento + ", duracaoEmMinutos="
+                + duracaoEmMinutos + "]";
+    }
+
+    
 }
